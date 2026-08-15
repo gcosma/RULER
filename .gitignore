@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Experiment outputs
+results/
+figures/
+notebooks/clinical_models/
+notebooks/clinical_figures/
+
+# Checkpoint directories for the sensitivity analyses, which retrain the
+# models. The primary `checkpoints/` directory is tracked.
+checkpoints_*/
+
+# Datasets are downloaded on first use, or supplied locally
+data/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store
+.ipynb_checkpoints/
+.ruff_cache/

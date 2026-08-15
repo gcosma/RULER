@@ -1,0 +1,14 @@
+# The library needs only numpy.
+numpy>=1.24
+
+# Everything below is for the paper's experiments in paper/ and experiments/.
+torch>=2.0
+pandas>=2.0
+scipy>=1.10
+scikit-learn>=1.3
+statsmodels>=0.14
+matplotlib>=3.7
+pytest>=7.0
+
+# Only for the clinical-text notebook.
+# transformers>=4.30

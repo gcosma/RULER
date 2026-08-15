@@ -1,0 +1,63 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the paper below."
+title: "RULER: Representation-Level Verification of Machine Unlearning"
+abstract: >-
+  Machine unlearning aims to remove the influence of specific training records
+  from a deployed model without retraining from scratch. Current protocols
+  verify this at the output level through membership inference, retain accuracy
+  and forget-set accuracy, but a model can satisfy all three whilst still
+  encoding forgotten records in its intermediate representations. RULER is a set
+  of representation-level verification metrics: the oracle-comparative metric
+  M2 measures whether forget-set records occupy the same representational
+  position as in a model retrained without them, and the oracle-free metric M4
+  detects residuals from the unlearned model's internal similarity structure
+  alone, without retraining.
+type: software
+license: MIT
+repository-code: "https://github.com/gcosma/RULER"
+keywords:
+  - machine unlearning
+  - verification
+  - representation learning
+  - membership inference
+  - privacy
+
+authors:
+  - family-names: Cosma
+    given-names: Georgina
+    affiliation: "Loughborough University"
+  - family-names: Finke
+    given-names: Axel
+    affiliation: "Newcastle University"
+
+preferred-citation:
+  type: conference-paper
+  title: "RULER: Representation-Level Verification of Machine Unlearning"
+  year: 2026
+  authors:
+    - family-names: Cosma
+      given-names: Georgina
+      affiliation: "Loughborough University"
+    - family-names: Finke
+      given-names: Axel
+      affiliation: "Newcastle University"
+  collection-title: >-
+    2nd Workshop on Machine Unlearning and Privacy Preservation (WIPE-OUT),
+    co-located with the European Conference on Machine Learning and Principles
+    and Practice of Knowledge Discovery in Databases (ECML PKDD)
+  conference:
+    name: >-
+      2nd Workshop on Machine Unlearning and Privacy Preservation (WIPE-OUT
+      2026), ECML PKDD 2026
+    city: Naples
+    country: IT
+    date-start: "2026-09-07"
+    date-end: "2026-09-07"
+    website: "https://aiimlab.org/events/ECML_PKDD_2026_WIPE-OUT_2_Workshop_on_Machine_Unlearning_and_Privacy_Preservation"
+  # The joint post-workshop proceedings appear in Springer's Communications in
+  # Computer and Information Science (CCIS). Volume, pages and DOI are omitted
+  # until that volume is published; add them here and in the README's BibTeX
+  # entry once available.
+  notes: >-
+    Revised version to appear in Springer Communications in Computer and
+    Information Science (CCIS).
