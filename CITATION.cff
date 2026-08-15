@@ -34,6 +34,11 @@ preferred-citation:
   type: conference-paper
   title: "RULER: Representation-Level Verification of Machine Unlearning"
   year: 2026
+  identifiers:
+    - type: other
+      value: "arXiv:2605.27569"
+      description: "arXiv preprint"
+  url: "https://arxiv.org/abs/2605.27569"
   authors:
     - family-names: Cosma
       given-names: Georgina
