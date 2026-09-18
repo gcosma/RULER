@@ -119,8 +119,9 @@ print(round(gap, 5))
 - Only meaningful when the original model and the oracle share a training
   seed (see [§5](#5-building-a-retrain-oracle)).
 - The median (not mean) baseline is deliberate: the retain similarity
-  distribution is right-skewed, and a mean baseline is inflated by roughly the
-  size of the gap itself.
+  distribution has a lower tail of less well-aligned records, so a mean
+  baseline sits below the median by roughly the size of the gap itself and
+  masks the signal.
 
 ### `m3(unlearned_forget, original_forget, oracle_forget) -> float`
 

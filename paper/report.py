@@ -221,10 +221,10 @@ def pairwise_method_table(
 
 
 def m2_baseline_sensitivity(frame: pd.DataFrame) -> pd.DataFrame:
-    """Table 5: M2 under the median baseline versus an arithmetic mean baseline.
+    """Supplementary Table S4: M2 under the median baseline versus an arithmetic mean baseline.
 
-    The comparison matters because the retain similarity distribution is
-    right-skewed: a mean baseline sits above the median by an amount comparable
+    The comparison matters because the retain similarity distribution has a
+    lower tail: a mean baseline sits below the median by an amount comparable
     to the gap itself, which masks the signal and reverses its sign in several
     conditions. ``m2_mean_baseline`` is recorded by every run.
     """
