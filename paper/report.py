@@ -82,7 +82,7 @@ def primary_table(frame: pd.DataFrame) -> pd.DataFrame:
 
 
 def output_level_table(frame: pd.DataFrame) -> pd.DataFrame:
-    """Table 3: output-level evaluation summary, mean +/- SD per condition.
+    """Supplementary Table S2: output-level evaluation summary, mean +/- SD per condition.
 
     ``mia_passes`` applies the paper's criterion: the mean MIA accuracy across
     training seeds must lie within +/-0.05 of chance.
@@ -113,7 +113,7 @@ def output_level_table(frame: pd.DataFrame) -> pd.DataFrame:
 
 
 def per_dataset_mia_table(frame: pd.DataFrame) -> pd.DataFrame:
-    """Table 4: per-dataset MIA accuracy, with the pass window flagged.
+    """Supplementary Table S3: per-dataset MIA accuracy, with the pass window flagged.
 
     The aggregate in :func:`output_level_table` masks real per-dataset
     variation. Where a method breaches the window, the oracle usually breaches
@@ -138,7 +138,7 @@ def per_dataset_mia_table(frame: pd.DataFrame) -> pd.DataFrame:
 
 
 def dataset_level_table(frame: pd.DataFrame, metric: str = "m2") -> pd.DataFrame:
-    """Table 10: one-sample Wilcoxon on the 10 dataset-level means.
+    """Supplementary Table S9: one-sample Wilcoxon on the 10 dataset-level means.
 
     Averaging within a dataset before testing removes the within-dataset
     correlation that makes the raw N = 100 observations non-independent.

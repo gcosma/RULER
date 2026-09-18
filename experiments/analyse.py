@@ -6,9 +6,9 @@
 Produces:
 
 * ``primary.csv``        -- Table 1, M2 and M4 by forget fraction and method
-* ``output_level.csv``   -- Table 3, the output-level pass criteria
-* ``per_dataset_mia.csv``-- Table 4, per-dataset MIA accuracy
-* ``dataset_level.csv``  -- Table 10, dataset-level Wilcoxon tests
+* ``output_level.csv``   -- Supplementary Table S2, the output-level pass criteria
+* ``per_dataset_mia.csv``-- Supplementary Table S3, per-dataset MIA accuracy
+* ``dataset_level.csv``  -- Supplementary Table S9, dataset-level Wilcoxon tests
 * ``pairwise.csv``       -- Section 5.3, post-hoc method comparisons
 
 and prints a readable summary of the headline result.
@@ -42,7 +42,7 @@ def _format_p(p: float) -> str:
 
 def print_summary(frame: pd.DataFrame, primary: pd.DataFrame, outputs: pd.DataFrame) -> None:
     print("\n" + "=" * 78)
-    print("OUTPUT-LEVEL EVALUATION (Table 3)")
+    print("OUTPUT-LEVEL EVALUATION (Supplementary Table S2)")
     print("=" * 78)
     print(
         f"{'ff':>5}  {'Method':<16}{'MIA':>8}{'Forget':>9}{'Retain':>9}"

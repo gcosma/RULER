@@ -150,7 +150,7 @@ def test_oracle_row_has_a_zero_gap_by_construction(condition):
 
 
 def test_forget_set_size_follows_the_published_rule(condition):
-    """455 training records at ff = 5% gives floor(22.75) = 22 (Table 9)."""
+    """455 training records at ff = 5% gives floor(22.75) = 22 (Supplementary Table S8)."""
     assert condition.rows[0]["n_forget"] == 22
     assert condition.rows[0]["n_retain"] == 433
 

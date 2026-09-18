@@ -229,7 +229,7 @@ python experiments/figures.py results/primary.csv --outdir figures
 |---|---|
 | Tables 1, 3, 4 (§5.1–5.2) | `run_primary.py` → `analyse.py` |
 | Bad Teacher (§5.4, A.11) | `run_primary.py --methods "Bad Teacher"` |
-| M2 between independently retrained oracles, Fig. 5 (A.5) | `run_oracle_calibration.py` |
+| M2 between independently retrained oracles, Supplementary Fig. S1 (Section S4) | `run_oracle_calibration.py` |
 | Mini-batch robustness (A.6) | `run_primary.py --batch-size 128 --checkpoint-dir checkpoints_minibatch` |
 | Learning-rate sensitivity (A.7) | `run_primary.py --unlearn-lr 1e-4 --forget-fractions 0.05` |
 | Forget-set sampling (A.8) | `run_primary.py --forget-seed 1000 --checkpoint-dir checkpoints_fs1000` |

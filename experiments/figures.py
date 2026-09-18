@@ -7,11 +7,11 @@ Produces:
 
 * ``fig1_discordance.pdf``   -- MIA accuracy and M2 at ff = 5% (Fig. 1)
 * ``fig3_m4_by_fraction.pdf``-- M4 across forget fractions (Fig. 3)
-* ``fig7_m4_per_dataset.pdf``-- per-dataset M4 at ff = 5% (Fig. 7)
+* ``fig7_m4_per_dataset.pdf``-- per-dataset M4 at ff = 5% (Supplementary Fig. S3)
 
 ``--accessible`` swaps in the colour-vision-safe palette; the default
 reproduces the published colours. Pass ``--oracle-null`` with the CSV from
-``run_oracle_calibration.py`` to also draw Fig. 5.
+``run_oracle_calibration.py`` to also draw Supplementary Fig. S1.
 """
 
 from __future__ import annotations
@@ -144,7 +144,7 @@ def figure_m4_by_fraction(frame, outdir, edges, fills):
 
 
 def figure_m4_per_dataset(frame, outdir, edges, fills, forget_fraction=0.05):
-    """Fig. 7: M4 per dataset, with the oracle as a within-dataset reference.
+    """Supplementary Fig. S3: M4 per dataset, with the oracle as a within-dataset reference.
 
     M4's variance is dominated by dataset identity, so the per-dataset view is
     the one that carries meaning; the oracle panel entry shows what the same
@@ -184,7 +184,7 @@ def figure_m4_per_dataset(frame, outdir, edges, fills, forget_fraction=0.05):
 
 
 def figure_m3_per_dataset(frame, outdir, edges, fills):
-    """Fig. 6: representation shift M3 per dataset, across forget fractions.
+    """Supplementary Fig. S2: representation shift M3 per dataset, across forget fractions.
 
     M3 asks whether unlearning moved forget records towards the oracle at all.
     Negative values mean it moved them further away, which is the dominant
@@ -229,7 +229,7 @@ def figure_m3_per_dataset(frame, outdir, edges, fills):
 
 
 def figure_oracle_null(null_frame, frame, outdir, edges, fills, forget_fraction=0.05):
-    """Fig. 5: the empirical null beside the unlearned distributions."""
+    """Supplementary Fig. S1: the empirical null beside the unlearned distributions."""
     fig, axes = plt.subplots(1, 2, figsize=(DOUBLE_COLUMN, 2.9))
 
     values = null_frame["m2"].dropna().to_numpy()
@@ -276,7 +276,7 @@ def main(argv=None) -> int:
     parser.add_argument("results", help="CSV written by run_primary.py")
     parser.add_argument("--outdir", default="figures")
     parser.add_argument(
-        "--oracle-null", help="CSV from run_oracle_calibration.py, to draw Fig. 5"
+        "--oracle-null", help="CSV from run_oracle_calibration.py, to draw Supplementary Fig. S1"
     )
     parser.add_argument(
         "--accessible",
