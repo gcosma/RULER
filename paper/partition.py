@@ -69,7 +69,7 @@ def make_partition(
     Parameters
     ----------
     seed
-        Fixed at 999 for all primary experiments. Appendix A.8 varies it over
+        Fixed at 999 for all primary experiments. Supplementary Section S7 varies it over
         999-1003 to confirm the findings do not depend on which records were
         selected.
     groups

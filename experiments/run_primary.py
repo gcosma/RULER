@@ -12,25 +12,25 @@ Primary experiment (Table 1, 3, 4)::
     python experiments/run_primary.py --output results/primary.csv
 
 Bad Teacher, the fifth method with a different forgetting mechanism
-(Section 5.4, Appendix A.11)::
+(Section 5.4, Supplementary Section S10)::
 
     python experiments/run_primary.py --methods "Bad Teacher" \
         --output results/bad_teacher.csv
 
-Robustness to mini-batch training at ff = 5% (Appendix A.6). This changes how
+Robustness to mini-batch training at ff = 5% (Supplementary Section S5). This changes how
 the models are trained, so it needs its own checkpoint directory::
 
     python experiments/run_primary.py --forget-fractions 0.05 --seeds 5 \
         --batch-size 128 --checkpoint-dir checkpoints_minibatch \
         --output results/minibatch.csv
 
-Sensitivity to the unlearning learning rate (Appendix A.7). Only unlearning
+Sensitivity to the unlearning learning rate (Supplementary Section S6). Only unlearning
 changes here, so the cached checkpoints still apply::
 
     python experiments/run_primary.py --forget-fractions 0.05 \
         --unlearn-lr 1e-4 --output results/lr_1e-4.csv
 
-Sensitivity to which records were selected for erasure (Appendix A.8). A new
+Sensitivity to which records were selected for erasure (Supplementary Section S7). A new
 forget set means a new retain set and therefore new oracles::
 
     python experiments/run_primary.py --forget-seed 1000 --seeds 5 \
@@ -99,19 +99,19 @@ def parse_args(argv=None) -> argparse.Namespace:
         "--batch-size",
         type=int,
         default=None,
-        help="mini-batch size; omit for full-batch training (Appendix A.6)",
+        help="mini-batch size; omit for full-batch training (Supplementary Section S5)",
     )
     parser.add_argument(
         "--unlearn-lr",
         type=float,
         default=None,
-        help="override the unlearning learning rate (Appendix A.7)",
+        help="override the unlearning learning rate (Supplementary Section S6)",
     )
     parser.add_argument(
         "--forget-seed",
         type=int,
         default=None,
-        help="override the forget-set sampling seed (Appendix A.8)",
+        help="override the forget-set sampling seed (Supplementary Section S7)",
     )
     parser.add_argument(
         "--device", default="cpu", help="torch device (default: cpu)"

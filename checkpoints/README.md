@@ -47,7 +47,7 @@ rather than by unlearning.
 
 The effect is large and directly measurable in these files — same-seed
 original–oracle similarity averages 0.99, against 0.44 for oracles trained with
-different seeds (Appendix A.16). `tests/test_models.py` asserts this gap.
+different seeds (Supplementary Section S15). `tests/test_models.py` asserts this gap.
 
 ## What is not cached
 

@@ -95,7 +95,7 @@ def _representation_row(*, unlearned, original, oracle, x_forget, x_retain, devi
         "m4": m4(unlearned_forget, gallery),
         "median_retain_similarity": float(np.median(retain_similarity)),
         "mean_retain_similarity": float(np.mean(retain_similarity)),
-        # Appendix A.5 compares M2 against a mean rather than median baseline.
+        # Supplementary Section S4 compares M2 against a mean rather than median baseline.
         "m2_mean_baseline": float(
             np.mean(forget_similarity) - np.mean(retain_similarity)
         ),
@@ -125,16 +125,16 @@ def run_condition(
     Parameters
     ----------
     unlearn_lr, batch_size
-        Overrides for the sensitivity analyses of Appendix A.6 and A.7. Leave
+        Overrides for the sensitivity analyses of Supplementary Sections S5 and S6. Leave
         as ``None`` for the primary configuration.
     forget_seed
-        Overrides the forget-set sampling seed for Appendix A.8. Changing it
+        Overrides the forget-set sampling seed for Supplementary Section S7. Changing it
         also changes the oracle, which is retrained on the new retain set, so
         such runs must use a separate checkpoint directory.
     include_oracle_row
         Also evaluate the oracle itself. Its output-level metrics are the
         reference the paper's pass criterion is read against, and its M4 gives
-        the per-dataset baseline of Appendix Fig. 7.
+        the per-dataset baseline of Supplementary Fig. S3.
     """
     train_kwargs = dict(train_kwargs or {})
     partition = (

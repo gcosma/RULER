@@ -81,7 +81,7 @@ def wilcoxon_signed_rank(
         Below this many non-tied differences the test is not reported. The
         smallest attainable two-sided p-value is ``2 / 2**n``, so at n = 5 no
         result can reach p < 0.05 however consistent the data; the paper notes
-        this explicitly for the five-seed diagnostics (Appendix A.14).
+        this explicitly for the five-seed diagnostics (Supplementary Section S13).
     """
     differences = np.asarray(values, dtype=float) - null
     differences = differences[np.isfinite(differences)]
@@ -116,7 +116,7 @@ def mixed_effects_test(
 
     A singular fit -- zero estimated between-dataset variance -- is reported
     with ``converged=False`` rather than raised, since it is informative in
-    itself: Appendix A.6 hits exactly this case under mini-batch training and
+    itself: Supplementary Section S5 hits exactly this case under mini-batch training and
     falls back to the Wilcoxon test.
     """
     import statsmodels.formula.api as smf

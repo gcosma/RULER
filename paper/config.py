@@ -8,7 +8,7 @@ invalidates the cache: delete the affected ``.pt`` files before re-running.
 from __future__ import annotations
 
 # ---------------------------------------------------------------------------
-# Random states (Section 4.1, Appendix A.16)
+# Random states (Section 4.1, Supplementary Section S15)
 # ---------------------------------------------------------------------------
 
 #: Train/test split and forget-set sampling share this random state.
@@ -39,7 +39,7 @@ TRAIN_EPOCHS = 50
 TRAIN_LR = 1e-3
 
 #: The primary experiments use full-batch gradient descent to remove
-#: optimisation noise. Appendix A.6 repeats ff=5% with this set to 128.
+#: optimisation noise. Supplementary Section S5 repeats ff=5% with this set to 128.
 BATCH_SIZE = None
 
 TEST_SIZE = 0.2
@@ -58,7 +58,7 @@ ALPHA = 0.6
 #: Distillation temperature for SCRUB and Bad Teacher.
 TEMPERATURE = 2.0
 
-#: Bad Teacher uses its own teacher initialisation seed (Appendix A.11).
+#: Bad Teacher uses its own teacher initialisation seed (Supplementary Section S10).
 BAD_TEACHER_SEED = 101
 
 # ---------------------------------------------------------------------------

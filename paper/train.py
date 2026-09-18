@@ -54,7 +54,7 @@ def train_model(
     batch_size
         ``None`` gives full-batch gradient descent, the primary setting: it
         removes optimisation noise so that representational differences
-        isolate unlearning dynamics. Appendix A.6 repeats the ff = 5%
+        isolate unlearning dynamics. Supplementary Section S5 repeats the ff = 5%
         experiment with mini-batches of 128 to confirm robustness.
     """
     device = torch.device(device)

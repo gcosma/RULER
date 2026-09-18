@@ -5,7 +5,7 @@ M4 needs only penultimate-layer embeddings and the retain/forget split, so it
 applies to any architecture. This script takes the embeddings as ``.npy`` files
 and stays independent of how they were produced -- the image, clinical-text and
 face-identity settings of Section 5.5 differ only in which layer is extracted
-(Appendix Table 2), not in the metric.
+(Supplementary Table S1), not in the metric.
 
     python experiments/run_m4_diagnostic.py --forget forget.npy --retain retain.npy
 
@@ -13,7 +13,7 @@ Each file is an ``(n, p)`` array of embeddings under a *single* model. Run it on
 the original model for the pre-unlearning diagnostic and on each unlearned
 model for the post-unlearning check.
 
-Extracting the right layer, per Appendix Table 2:
+Extracting the right layer, per Supplementary Table S1:
 
     # Tabular MLP -- the second ReLU
     from paper.models import penultimate

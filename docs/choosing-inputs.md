@@ -109,11 +109,11 @@ m3(embed(unlearned, forget), embed(original, forget),
 **The oracle must share the original model's initialisation seed.** Cosine
 similarity is not rotation-invariant, so an independently seeded oracle measures
 initialisation geometry rather than unlearning: same-seed pairs sit at 0.99
-similarity, differently-seeded pairs at 0.44.
+similarity, differently-seeded pairs at 0.43.
 
 Check this in your own setup before trusting M2: apply `m2` to *pairs of
 independently retrained oracles*, none of which saw the forget set. Neither is
-unlearned, so the result should centre on zero (Appendix A.5).
+unlearned, so the result should centre on zero (Supplementary Section S4).
 
 ```python
 # requires: several independently retrained oracles

@@ -132,7 +132,7 @@ def test_cached_checkpoints_load_into_the_reconstructed_architecture(
 def test_paired_seed_design_holds_in_the_cached_checkpoints(
     checkpoints_dir, has_checkpoints
 ):
-    """Appendix A.16: same-seed pairs are far more similar than different-seed pairs.
+    """Supplementary Section S15: same-seed pairs are far more similar than different-seed pairs.
 
     The paper reports a grand mean of 0.993 for same-seed original-oracle pairs
     against 0.431 for differently-seeded oracle pairs. Reproducing that gap

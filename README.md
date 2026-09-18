@@ -180,8 +180,8 @@ any of them produces incorrect metric values without an error.
 3. **Use paired seeds for `m1`, `m2` and `m3`.** Cosine similarity is not
    rotation-invariant. The original model and the oracle must be trained
    from the same random initialisation: same-seed pairs reach approximately
-   0.99 cross-model similarity, differently-seeded pairs approximately 0.44
-   (Appendix A.16). With an unpaired oracle the metrics measure
+   0.99 cross-model similarity, differently-seeded pairs approximately 0.43
+   (Supplementary Section S15). With an unpaired oracle the metrics measure
    initialisation geometry, not unlearning.
 4. **Do not split an erasure request.** All records belonging to one patient,
    document or identity must be assigned wholly to the forget set or wholly
@@ -248,9 +248,9 @@ What the suite verifies:
 - Each metric is checked against its defining equation from the paper,
   including exact-tie and chunk-boundary cases.
 - The shipped checkpoints reproduce the paper's paired-seed result
-  (Appendix A.16: approximately 0.99 same-seed versus 0.44 cross-seed
+  (Supplementary Section S15: approximately 0.99 same-seed versus 0.43 cross-seed
   similarity).
-- The published forget-set sizes (Appendix Table 9) are reproduced for all
+- The published forget-set sizes (Supplementary Table S8) are reproduced for all
   ten datasets.
 - Every code block in the tutorial and the manual is executed by the test
   suite, and every printed output in the tutorial matches real execution.

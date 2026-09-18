@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Empirical calibration of the M2 null (paper Appendix A.5, Fig. 5).
+"""Empirical calibration of the M2 null (paper Supplementary Section S4, Fig. S1).
 
 M2's null hypothesis is that forget-set records attain the same similarity to
 the oracle as retained records do.  This script checks that the null is

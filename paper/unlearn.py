@@ -1,4 +1,4 @@
-"""Approximate unlearning methods (paper Section 4.2 and Appendix A.11).
+"""Approximate unlearning methods (paper Section 4.2 and Supplementary Section S10).
 
 All methods start from a copy of the original model and use Adam at a fixed
 unlearning learning rate, held constant across datasets and forget fractions.
@@ -274,7 +274,7 @@ def bad_teacher(
     loss, this method tests whether the paper's discordance is a property of
     the unlearning task rather than of any single algorithm.
 
-    ``teacher_seed`` selects the random teacher's initialisation; Appendix A.11
+    ``teacher_seed`` selects the random teacher's initialisation; Supplementary Section S10
     repeats the analysis over seeds 101 and 102 to confirm the findings do not
     depend on it.
     """

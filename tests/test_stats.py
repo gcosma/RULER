@@ -71,7 +71,7 @@ def test_wilcoxon_returns_nan_below_the_minimum_sample_size():
 
 
 def test_five_seeds_cannot_reach_significance():
-    """Appendix A.14: at N = 5 the smallest attainable two-sided p is 0.0625.
+    """Supplementary Section S13: at N = 5 the smallest attainable two-sided p is 0.0625.
 
     The five-seed diagnostics therefore report estimates rather than p-values,
     and the code must not imply otherwise.
@@ -129,7 +129,7 @@ def test_mixed_model_tests_against_a_non_zero_null():
 
 
 def test_mixed_model_reports_rather_than_raises_on_a_degenerate_fit():
-    """Appendix A.6 hits a singular REML fit and falls back to Wilcoxon."""
+    """Supplementary Section S5 hits a singular REML fit and falls back to Wilcoxon."""
     frame = pd.DataFrame({"dataset": ["a"] * 5, "value": [0.1] * 5})
     result = mixed_effects_test(frame, "value", "dataset")
     assert not result.converged

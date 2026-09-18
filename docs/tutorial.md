@@ -120,7 +120,7 @@ trained: original (400 records) and oracle (360 retain records)
 **Why the same seed twice?** Cosine similarity is not rotation-invariant.
 Two networks initialised differently end up in different representational
 geometries even when trained on identical data — same-seed pairs sit at ~0.99
-cross-model similarity, differently-seeded pairs at ~0.44. If the oracle is
+cross-model similarity, differently-seeded pairs at ~0.43. If the oracle is
 not seed-paired with the original, `m2` measures initialisation, not
 unlearning. This decision happens *before training* and cannot be repaired
 afterwards.

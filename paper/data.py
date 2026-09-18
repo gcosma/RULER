@@ -10,7 +10,7 @@ paper.  A load that does not match them raises rather than proceeding, because
 a silently different OpenML version would change the forget-set sizes and make
 the cached checkpoints in ``checkpoints/`` invalid without any visible error.
 ``tests/test_data_spec.py`` checks these counts against the forget-set sizes
-published in Appendix Table 9 without needing network access.
+published in Supplementary Table S8 without needing network access.
 
 Offline use
 -----------
@@ -68,7 +68,7 @@ class DatasetSpec:
     note: str = ""
 
 
-# Row and feature counts below are pinned by Appendix Table 9: they are the
+# Row and feature counts below are pinned by Supplementary Table S8: they are the
 # only counts that reproduce every published forget-set size under
 # max(10, floor(ff * n_train)) with an 80/20 split.
 DATASETS: dict[str, DatasetSpec] = {

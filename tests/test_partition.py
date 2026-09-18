@@ -1,6 +1,6 @@
 """Tests for the retain/forget partition and the dataset specification.
 
-The forget-set sizes published in Appendix Table 9 are a complete fingerprint
+The forget-set sizes published in Supplementary Table S8 are a complete fingerprint
 of the data pipeline: they are reproduced only by the exact row counts, an
 80/20 split, and the ``max(10, floor(ff * n_train))`` rule.  Checking them here
 verifies the dataset specification and the partition logic together, without
@@ -18,7 +18,7 @@ from paper.config import FORGET_FRACTIONS, MIN_FORGET_SIZE, TEST_SIZE
 from paper.data import DATASETS
 from paper.partition import forget_set_size, make_partition
 
-#: |D_f| per dataset at ff = 1%, 5%, 10%, transcribed from Appendix Table 9.
+#: |D_f| per dataset at ff = 1%, 5%, 10%, transcribed from Supplementary Table S8.
 PAPER_FORGET_SIZES = {
     "heart_disease": (10, 12, 24),
     "breast_cancer": (10, 22, 45),
@@ -93,7 +93,7 @@ def test_partition_is_reproducible_at_a_fixed_seed():
 
 
 def test_partition_changes_with_the_forget_seed():
-    """Appendix A.8 varies this seed to test robustness to record selection."""
+    """Supplementary Section S7 varies this seed to test robustness to record selection."""
     default = make_partition(500, 0.10)
     varied = make_partition(500, 0.10, seed=1000)
     assert not np.array_equal(default.forget_idx, varied.forget_idx)

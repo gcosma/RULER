@@ -225,7 +225,7 @@ the weights afterwards:
 1. **Same initialisation seed as the original model.** Cosine similarity is
    not rotation-invariant; two independently initialised networks differ by
    geometry alone (same-seed pairs sit at ~0.99 cross-model similarity,
-   differently-seeded pairs at ~0.44). An unpaired oracle measures
+   differently-seeded pairs at ~0.43). An unpaired oracle measures
    initialisation, not unlearning.
 2. **Trained from scratch on the retain set** — never fine-tuned from the
    original model, which would carry the forget set's influence straight into
@@ -243,7 +243,7 @@ oracle = train(fresh_model(), x_retain, y_retain)
 **Sanity-check the pairing before trusting `m2`.** Train two or more oracles
 under *different* seeds, none of which saw the forget set, and apply `m2` to
 each pair. Nothing was unlearned, so the values should centre on zero
-(paper Appendix A.5). A centre far from zero means the setup is biased —
+(paper Supplementary Section S4). A centre far from zero means the setup is biased —
 usually unpaired initialisation — and every result would read as residual
 memorisation:
 
@@ -326,7 +326,7 @@ leaking?" rather than "did this one deletion work?".
 | Symptom | Likely cause | Check |
 |---|---|---|
 | Results differ between identical runs | model left in training mode (dropout / batch-norm updating) | embed the same batch twice; the arrays must be identical |
-| Every `m2` strongly negative, even for a freshly retrained model | oracle not seed-paired with the original | run the Appendix A.5 calibration in [§5](#5-building-a-retrain-oracle) |
+| Every `m2` strongly negative, even for a freshly retrained model | oracle not seed-paired with the original | run the Supplementary Section S4 calibration in [§5](#5-building-a-retrain-oracle) |
 | `m4` high even before unlearning, on data you don't believe is memorised | an erasure request split across forget/retain | confirm every patient/document/identity is wholly on one side |
 | `m4` ≈ 0.50 read as "erased" on 10–30 records | value is inside the null interval | compare against the table in [§6](#6-interpreting-results) |
 | `m2` sign flips when you recompute | retain rows reordered between the two models | same records, same order, both arrays |
@@ -353,7 +353,7 @@ are linear in the number of records and effectively free.
 
 ## 9. Limitations
 
-Stated in the paper (Appendix A.2, §3.4) and worth restating here:
+Stated in the paper (§6, Limitations paragraph, and §3.4) and worth restating here:
 
 - **Not a compliance test.** The metrics characterise representational
   residuals, not regulatory adequacy under GDPR Article 17.
