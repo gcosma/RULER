@@ -156,9 +156,10 @@ def m2(unlearned_forget, oracle_forget, unlearned_retain, oracle_retain) -> floa
     - **Positive**: unlearning pushed them closer to the oracle than retained
       records -- over-correction.
 
-    The median is deliberate on the retain side: that distribution is
-    right-skewed, and a handful of records with unusually high similarity
-    inflate the mean by about the size of the gap itself, masking the signal.
+    The median is deliberate on the retain side: that distribution has a lower
+    tail of retain records that are less well aligned with the oracle, so the
+    mean falls below the median by about the size of the gap itself. A mean
+    baseline therefore sits too low and masks the residual signal.
     The forget side uses the mean because the forget set is small and every
     record, including outliers that may signal incomplete erasure, should count.
 

@@ -56,7 +56,7 @@ representations, so the oracle-comparative metrics (`m1`, `m2`, `m3`) rely on
 this pairing: with it, the difference between two models reflects unlearning;
 with mismatched seeds, that difference reflects initialisation geometry
 instead. Same-seed original–oracle similarity averages ≈ 0.99, against ≈ 0.43
-for oracles trained with different seeds (paper Appendix A.16).
+for oracles trained with different seeds (paper Supplementary Section S15).
 
 ## The experiment code
 

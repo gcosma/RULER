@@ -85,7 +85,7 @@ def test_m2_equals_m1_minus_the_retain_median(rng):
 
 
 def test_m2_is_zero_when_forget_and_retain_are_exchangeable():
-    """The null is attainable, not true only by construction (Appendix A.5)."""
+    """The null is attainable, not true only by construction (Supplementary Section S4)."""
     gaps = []
     for trial in range(60):
         trial_rng = np.random.RandomState(trial)
@@ -107,14 +107,15 @@ def test_m2_is_negative_when_forget_records_are_displaced(rng):
 
 
 def test_m2_uses_the_median_not_the_mean_baseline():
-    """A right-skewed retain distribution must not drag the baseline upward.
+    """A lower tail in the retain distribution must not drag the baseline downward.
 
-    Appendix A.5: swapping the median for the mean shifts M2 by an amount
-    comparable to the gap itself, so the two must differ here.
+    Supplementary Section S4: the retain-set mean falls below the median by an
+    amount comparable to the gap itself, so the two baselines must differ here.
     """
     forget = np.tile([[1.0, 0.0]], (5, 1))
     oracle_forget = np.tile([[1.0, 0.05]], (5, 1))
-    angles = np.concatenate([np.full(45, 0.4), np.full(5, 0.0)])
+    # 45 well-aligned retain records and 5 less well aligned: a lower tail.
+    angles = np.concatenate([np.full(45, 0.0), np.full(5, 0.4)])
     retain = np.stack([np.cos(angles), np.sin(angles)], axis=1)
     oracle_retain = np.tile([[1.0, 0.0]], (50, 1))
 

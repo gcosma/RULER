@@ -65,7 +65,7 @@ stand-ins, and both are decisions fixed before training:
 - **Give the oracle the original model's initialisation seed.** Cosine
   similarity depends on the orientation of the two representations: same-seed
   pairs reach roughly 0.99 cross-model similarity, differently-seeded pairs
-  roughly 0.43 (paper Appendix A.16). With an unpaired oracle, `m2` measures
+  roughly 0.43 (paper Supplementary Section S15). With an unpaired oracle, `m2` measures
   initialisation geometry rather than unlearning.
 
 ```python
